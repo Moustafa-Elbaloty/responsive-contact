@@ -1,0 +1,224 @@
+:root {
+    --main-color: #3729b2;
+    --secondary-color: #f5f4fb;
+    --transparent-font: #cccaebab;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+a {
+    text-decoration: none
+}
+
+body {
+    margin: 0;
+    background-image: linear-gradient(to right, var(--secondary-color) 30%, var(--main-color) 30%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    min-height: 100vh
+}
+
+.container {
+    width: 80vw;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    transform: translateY(15px);
+    align-items: center;
+    opacity: 0;
+    transition: all 1s ease-out;
+
+}
+
+.container.load {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* start section ways */
+.container #ways {
+    background: var(--main-color);
+    color: #cccaeb;
+    text-transform: capitalize;
+    padding: 30px
+}
+
+.container #ways img {
+    border-radius: 50%
+}
+
+
+.container #ways ul li a {
+    margin: 7px;
+    padding: 8px 25px;
+    display: block;
+    color: #cccaeb;
+    width: 70px;
+    transition: .5s;
+    border-radius: 10px;
+
+}
+
+
+.container #ways ul li a:hover {
+    background: #4d40b9;
+    transform: scale(1.1);
+    color: var(--transparent-font)
+}
+
+.container #ways .joining {
+    margin: 80px 0 0;
+    line-height: 1.8;
+}
+
+.container #ways .joining span {
+    color: var(--transparent-font);
+    font-size: 15px
+}
+
+.container #ways .joining h3 {
+    color: var(--secondry-color);
+
+}
+
+.container #ways .joining p {
+    font-size: 13px
+}
+
+.container #ways .joining a {
+    color: var(--secondry-color);
+    font-weight: bold;
+    position: relative;
+    font-size: 12px;
+}
+
+.container #ways .joining a:after {
+    position: absolute;
+    content: "\f061";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    translate: 10px 5px;
+    transition: .2s
+}
+
+.container #ways .joining a:hover:after {
+    transform: translateX(10px)
+}
+
+/* end section ways */
+/* start section info */
+.container #info {
+    padding: 25px;
+}
+
+.container #info .heading {
+    width: 125px;
+    font-size: 25px;
+    color: #505050;
+}
+
+.container #info .heading div {
+    line-height: 1.5;
+    margin: 15px 0 50px;
+    font-size: 16px;
+}
+
+.container #info textarea,
+.container #info input {
+    border: none;
+    border-bottom: 2px solid var(--transparent-font);
+    padding: 8px 15px;
+    font-size: 12px;
+    outline: none;
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.container #info textarea {
+    min-height: 107px;
+    resize: none
+}
+
+.container #info .send {
+    margin-top: 20px;
+    color: var(--main-color);
+    transition: .5s;
+    padding: 0 6px;
+    border-radius: 12px;
+    width: fit-content;
+    cursor: pointer;
+
+}
+
+.container #info input[type="submit"] {
+    background: none;
+    border: none;
+    color: var(--main-color);
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-left: -10px;
+    width: fit-content;
+    cursor: pointer
+}
+
+
+
+.container #info .send:hover {
+    background: var(--secondry-color);
+    transform: scale(1.1)
+}
+
+
+/* end section info */
+/* start section contact */
+.container #contact {
+    padding: 25px;
+}
+
+.container #contact address {
+    font-size: 30px;
+    text-transform: capitalize;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: -42px;
+}
+
+.container #contact span,
+.container #contact p {
+    color: #c1bee0;
+    line-height: 1.8;
+}
+
+.container #contact span a {
+    color: var(--main-color)
+}
+
+/* end section contact *
+//**************media************** */
+@media (max-width:1200px) {
+    .container #contact {
+        grid-column: 1/-1;
+        text-align: center;
+        padding: 100px 40px
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
